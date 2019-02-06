@@ -45,39 +45,3 @@ PostContainer.defaultProps = {
     ]
   }
 };
-
-
-import React, { Component, Fragment } from "react";
-
-
-class TodoList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos: [
-        { id: 0, name: 'apply for job', 'completed': true },
-        { id: 1, name: 'complete interview', 'completed': false },
-        { id: 2, name: 'accept offer', 'completed': false },
-      ]
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <ul>
-          {this.state.todos.map(todo => {
-            return <Todo key={Math.random()} todo={todo} />
-          })}
-
-        </ul>
-      </div>
-    )
-  }
-
-}
-
-
-const Todo = props => (
-  <div>{props.todo.id}:{props.todo.name}, completed? {props.todo.completed ? 'yes' : 'no'}</div>
-)
